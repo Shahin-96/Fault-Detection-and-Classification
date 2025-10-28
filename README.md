@@ -28,66 +28,59 @@ Classification target: A, B, C, G → fault type identifiers
  - Data split into train (67%) and test (33%) sets using train_test_split().
  - Normalized class distribution visualized using Seaborn bar plots.
 
+<p align="center">   
+<img width="630" height="470" alt="image" src="https://github.com/user-attachments/assets/923b6f38-194d-42c7-916d-d39660ad8fea" />
+</p>
+
 2️⃣ Models Implemented
 The following models were trained and evaluated separately for detection and classification:
+<div align="center">
+
 | Model | Accuracy (Detection) | Accuracy (Classification) |
 |:--|:--:|:--:|
-| Linear Regression | 0.7384 | 0.0324 |
-| Logistic Regression | 0.9536 | 0.316 |
-| Polynomial Regression | 0.9914 | 0.945 |
-| Multi-Layer Perceptron (MLP) | 0.9806 🥉| 0.886 |
-| Naive Bayes | 0.9942 | 0.797 |
-| Decision Tree | 0.9821 🥇 | 0.865 |
-| Support Vector Machine (SVM) | 0.9924 | 0.317 |
-| K-Nearest Neighbors (KNN) | 0.9924 🥈 | 0.8246 |
+| Linear Regression | 0.0179 | 0.0324 |
+| Logistic Regression | 0.7384 | 0.3156 |
+| Polynomial Regression | 0.9536 | 0.9451 🥇|
+| Multi-Layer Perceptron (MLP) | 0.9917 🥉| 0.8829 🥈|
+| Naive Bayes | 0.9806 | 0.7969 |
+| Decision Tree | 0.9939 🥇 | 0.8674 🥉|
+| Support Vector Machine (SVM) | 0.9821 | 0.3168 |
+| K-Nearest Neighbors (KNN) | 0.9924 🥈 | 0.8247 |
 
-📊 Model Comparison
+</div>
+
+## Model Comparison
 
 The project concludes with graphical comparisons of:
 
-Accuracy vs. Model
+1️⃣ **Detection Model Comparison**:
+<p align="center">
+<img width="1314" height="461" alt="image" src="https://github.com/user-attachments/assets/8ac29765-2004-4b8f-9b75-901e0d6252c6" />
+</p>
 
-Error (MSE) vs. Model
+2️⃣ **Classification Model Comparison**:
+<p align="center">
+<img width="1314" height="461" alt="image" src="https://github.com/user-attachments/assets/8c872590-d4de-4574-8e36-a8e2b0a898a7" />
+</p>
 
 These visualizations clearly demonstrate that Decision Tree, MLP, and KNN models achieved the highest detection accuracy, while Polynomial Regression provided the best balance for classification.
 
-🧮 Key Functions
-from sklearn.metrics import accuracy_score, mean_squared_error
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression, LogisticRegression
-from sklearn.neural_network import MLPClassifier
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.naive_bayes import GaussianNB
-from sklearn.svm import SVC, LinearSVC
-from sklearn.neighbors import KNeighborsClassifier
+## Results Summary
 
-🧾 Results Summary
+#### Detection Model Performance
 
-Detection Model Performance:
+→ $${\color{green}Best}$$: Decision Tree with 99.39% Accuracy, 0.0058 MSE 
 
-Best: Decision Tree → 99.4% Accuracy, 0.0058 MSE
+→ $${\color{red}Worst}$$: Linear Regression with 1.8% Accuracy, 0.2437 MSE
 
-Worst: Linear Regression → 1.8% Accuracy, 0.2437 MSE
 
-Classification Model Performance:
+### Classification Model Performance 
 
-Best: Polynomial Regression → 94.5% Accuracy, 0.0134 MSE
+→ $${\color{green}Best}$$: Polynomial Regression with 94.5% Accuracy, 0.0134 MSE
 
-Worst: Logistic Regression → 31.6% Accuracy, 37.83 MSE
+→ $${\color{red}Worst}$$: Logistic Regression with 31.6% Accuracy, 37.83 MSE
 
-🚀 Technologies Used
-
-Python 3.11
-
-Scikit-Learn
-
-NumPy & Pandas
-
-Matplotlib & Seaborn
-
-Google Colab
-
-📈 Conclusion
+## Conclusion
 
 This project provides a comparative analysis of multiple ML models for fault detection and classification in electrical systems.
 It demonstrates that nonlinear and ensemble-based approaches (Decision Tree, MLP, Polynomial Regression) outperform simple linear models, offering higher accuracy and reliability for real-world power system fault analysis.
